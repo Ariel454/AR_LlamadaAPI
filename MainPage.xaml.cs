@@ -30,8 +30,13 @@ public partial class MainPage : ContentPage
 
 				var weatherData = JsonConvert.DeserializeObject<AR_Clima>(content);
 
-
-
+				lblEstadoClima.Text = weatherData.weather[0].description;
+				lblPais.Text = weatherData.sys.country;
+				lblCiudad.Text = weatherData.name;
+				lblTemperatura.Text = weatherData.main.temp.ToString();
+				lblPresion.Text = weatherData.main.pressure.ToString();
+				lblHumedad.Text = weatherData.main.humidity.ToString();
+				lblNivel.Text = weatherData.main.sea_level.ToString();
 			}
         }
     }
